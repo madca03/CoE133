@@ -1,6 +1,77 @@
 <% include ./partials/header %>
 
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<div class="contents" ng-app="app" ng-controller="DocumentController">
+  <div class="row">
+
+    <div class="three columns">
+      <ul class="form-filter">
+        <li class="form-type" ng-click="emptyType()">
+          <span>All</span>
+        </li>
+        <li class="form-type" ng-click="filterType('tcg')">
+          <span>TCG</span>
+        </li>
+        <li class="form-type" ng-click="filterType('dropform')">
+          <span>Dropping Form</span>
+        </li>
+        <li class="form-type" ng-click="filterType('regform')">
+          <span>Registration Form</span>
+        </li>
+        <li class="form-type" ng-click="filterType('overloadform')">
+          <span>Overload Form</span>
+        </li>
+      <ul>
+    </div> <!-- end .three.columns -->
+
+    <div class="nine columns">
+
+      <div class="search-group">
+        <label>Search:
+          <input type="text" ng-model="query.tracking_number">
+        </label>
+        <label class="form-group">Pending
+          <input type="radio" ng-model="query.status" name="status" value="pending">
+        </label>
+        <label class="form-group">Released
+          <input type="radio" ng-model="query.status" name="status" value="released">
+        </label>
+        <label class="form-group">All
+          <input type="radio" ng-model="query.status" name="status" value="" checked>
+        </label>
+        <!-- <div class="search-group__button-container">
+          <img src="/images/search.svg">
+        </div> -->
+      </div>
+
+      <div class="document">
+        <table class="tb-document">
+          <thead>
+            <tr>
+              <th>Tracking No</th>
+              <th>Type</th>
+              <th>Source</th>
+              <th>Date of Filing</th>
+              <th>Date Completed</th>
+              <th>Status</th>
+              <th>Destination</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat="x in documents | filter:query">
+              <td class="td-track-num">{{x.tracking_number}}</td>
+              <td>{{x.type}}</td>
+              <td>{{x.sent_from}}</td>
+              <td>{{x.destination}}</td>
+              <td>{{x.date_of_filing}}</td>
+              <td>{{x.date_completed}}</td>
+              <td>{{x.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% include ./partials/footer %>

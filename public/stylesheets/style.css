@@ -1,3 +1,10 @@
+/* set font-size of root for rems */
+
+html {
+  font-size: 62.5%;
+}
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +12,157 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+
+.navbar {
+  display: block;
+  width: 100%;
+  height: 6.5rem;
+  background: #fff;
+  z-index: 99;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.navbar-item {
+  position: relative;
+  float: left;
+  margin-bottom: 0;
+}
+
+.navbar-item > a {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  margin-right: 35px;
+  text-decoration: none;
+  line-height: 6.5rem;
+  color: #222;
+}
+
+.navbar-item > a:hover {
+  color: #0FA0CE;
+}
+
+.navbar > .container {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+}
+
+/* contents */
+
+.contents {
+  margin-top: 41px;
+  font-size: 9px;
+}
+
+.form-filter {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.form-type {
+  margin-bottom: 9px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #660011;
+  text-align: center;
+  letter-spacing: .5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+}
+
+.form-type > span {
+  font-size: 12px;
+}
+
+/* css for document table */
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+td {
+  font-size: 1.3rem;
+  color: rgba(0,0,0,.87);
+  transition: background-color .10s ease;
+}
+
+th {
+  font-size: 1.2rem;
+  color: rgba(0,0,0,.54);
+}
+
+table.tb-document > tbody > tr:hover > td {
+  transition: background-color .10s ease;
+  background-color: #EEEEEE;
+}
+
+tr {
+  display: table-row;
+}
+
+td, th {
+  border: none;
+  display: table-cell;
+}
+
+.td-track-num {
+  text-align: right;
+}
+
+.main {
+  max-width: 950px;
+}
+
+/* search group */
+
+.search-group__button-container {
+  display: inline-block;
+  height: 3.8rem;
+  vertical-align: middle;
+}
+
+.search-group__button-container > img {
+  width: 2rem;
+  height: 1.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.form-group {
+  display: inline-block;
 }
